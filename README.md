@@ -44,4 +44,4 @@ Como o projeto utiliza exclusivamente arquivos estáticos (HTML, CSS e JS), não
 
 1. Faça o clone deste repositório:
    ```bash
-   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/rafaell-commits/PARA-MINHA-NOIVA.git)
+   git clone [https://github.com/rafaell-commits/PARA-MINHA-NOIVA.git](https://github.com/rafaell-commits/PARA-MINHA-NOIVA.git)
