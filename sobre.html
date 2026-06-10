@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — Roberta</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ─── PAGE-SPECIFIC EXTRAS ─── */
+    .page-hero {
+      min-height: 55vh;
+      background: linear-gradient(135deg, rgba(13, 27, 62, 0.97) 0%, rgba(107, 15, 31, 0.92) 60%, rgba(13, 27, 62, 0.98) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 6% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(155, 28, 46, 0.35), transparent 70%);
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-hero-inner .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .page-hero-inner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-hero-inner h1 span {
+      color: var(--gold-lt);
+    }
+
+    .page-hero-inner p {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: rgba(253, 250, 245, 0.75);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* About content */
+    .about-section {
+      padding: 8rem 6%;
+      background: var(--cream);
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--crimson), var(--gold), transparent);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(155, 28, 46, 0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    /* Why you section */
+    .why-section {
+      padding: 8rem 6%;
+      background: var(--navy);
+    }
+
+    .why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.4s;
+    }
+
+    .why-card:hover {
+      background: rgba(155, 28, 46, 0.2);
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-8px);
+    }
+
+    .why-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .why-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    .why-card p {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(253, 250, 245, 0.65);
+    }
+
+    /* Poet section */
+    .poet-section {
+      padding: 8rem 6%;
+      background: var(--white);
+    }
+
+    .poet-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .big-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.5;
+      margin: 3rem 0 1.5rem;
+      position: relative;
+    }
+
+    .big-quote::before {
+      content: '❝';
+      font-size: 6rem;
+      color: rgba(155, 28, 46, 0.08);
+      position: absolute;
+      top: -2rem;
+      left: -1rem;
+      font-style: normal;
+      line-height: 1;
+    }
+
+    .big-quote-cite {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--crimson);
+    }
+
+    @media(max-width:900px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:768px) {
+      .page-hero {
+        min-height: 50vh;
+        padding: 6rem 5% 3rem;
+      }
+
+      .page-hero-inner h1 {
+        font-size: clamp(2.2rem, 10vw, 4rem);
+      }
+
+      .page-hero-inner p {
+        font-size: 1.05rem;
+      }
+
+      .about-section {
+        padding: 5rem 5%;
+      }
+
+      .about-inner {
+        gap: 2.5rem;
+      }
+
+      .why-section {
+        padding: 5rem 5%;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+
+      .why-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .why-card .icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .why-card h3 {
+        font-size: 1.1rem;
+      }
+
+      .why-card p {
+        font-size: 0.95rem;
+      }
+
+      .poet-section {
+        padding: 5rem 5%;
+      }
+
+      .big-quote {
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        margin: 2rem 0 1rem;
+      }
+
+      .big-quote::before {
+        font-size: 4rem;
+        top: -1.5rem;
+        left: -0.5rem;
+      }
+
+      .timeline-item {
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .timeline-dot {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+      }
+
+      .timeline-content h3 {
+        font-size: 1.05rem;
+      }
+
+      .timeline-content p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media(max-width:420px) {
+      .page-hero-inner h1 {
+        font-size: clamp(2rem, 11vw, 3rem);
+      }
+
+      .big-quote {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <header id="header">
+    <a class="logo" href="index.html">R<span>oberta</span></a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html" class="active">Sobre</a></li>
+        <li><a href="nos.html">Nós</a></li>
+        <li><span class="nav-heart">♥</span></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="hero-eyebrow">❦ &nbsp; Capítulo II &nbsp; ❦</span>
+      <h1>Sobre este <span>site</span></h1>
+      <p>"A arte é a forma mais bela de mentira que a verdade já inventou." — e este site é arte.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-inner">
+
+      <div class="reveal-left">
+        <p class="section-label">Como tudo começou</p>
+        <h2
+          style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:1.5rem;">
+          Um projeto de <em style="color:var(--crimson);font-style:italic;">aprendizado</em> que virou uma declaração
+        </h2>
+        <p style="font-size:1.1rem;line-height:1.8;color:var(--text-mid);margin-bottom:1rem;">
+          Quando comecei a aprender desenvolvimento web, percebi rapidamente que aprender por aprender
+          não basta — preciso de um propósito. E meu maior propósito tem nome: Roberta.
+        </p>
+        <p style="font-size:1.1rem;line-height:1.8;color:var(--text-mid);margin-bottom:2rem;">
+          Cada tag HTML, cada propriedade CSS, cada linha de JavaScript foi aprendida e aplicada
+          aqui, neste espaço criado especialmente para você.
+        </p>
+        <div class="inline-quote">
+          <p>"O amor é a única coisa que cresce quanto mais dividimos."</p>
+          <small>— Antoine de Saint-Exupéry, O Pequeno Príncipe</small>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot">💻</div>
+            <div class="timeline-content">
+              <h3>Aprendendo HTML & CSS</h3>
+              <p>As primeiras linhas de código. Estrutura, estilo, forma — tudo começando a tomar forma.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">🎨</div>
+            <div class="timeline-content">
+              <h3>Escolhendo as cores</h3>
+              <p>Vermelho pelo amor, azul pela profundidade, branco pela pureza — tudo pensado para você.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">📜</div>
+            <div class="timeline-content">
+              <h3>Selecionando as citações</h3>
+              <p>Horas escolhendo palavras de Neruda, Pessoa, Clarice, Vinícius — palavras que te descrevem.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">❤</div>
+            <div class="timeline-content">
+              <h3>Finalizando com amor</h3>
+              <p>Cada detalhe revisado, cada animação ajustada. Porque você merece o melhor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY YOU -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="section-header reveal">
+        <p class="section-label">Por que você?</p>
+        <h2
+          style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;font-style:italic;color:var(--white);line-height:1.15;margin-top:0.5rem;">
+          Porque existem <span style="color:var(--gold-lt);">mil razões</span><br>e todas levam a você
+        </h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <span class="icon">🌹</span>
+          <h3>Você me inspira</h3>
+          <p>A sua existência me faz querer ser melhor em tudo que faço — incluindo este site.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="icon">🌟</span>
+          <h3>Você me equilibra</h3>
+          <p>Nos momentos em que tudo parece difícil, pensar em você é minha bússola.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="icon">💫</span>
+          <h3>Você me faz crescer</h3>
+          <p>Cada desafio que enfrento, encaro pensando que quero ser digno do seu amor.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="icon">🎶</span>
+          <h3>Você é minha música</h3>
+          <p>Aquela que toca mesmo quando não há som — sempre presente, sempre suave.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="icon">🌊</span>
+          <h3>Você me acalma</h3>
+          <p>Como o mar que volta sempre para a praia — você é onde sempre quero chegar.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="icon">🏡</span>
+          <h3>Você é meu lar</h3>
+          <p>Lar não é um lugar — é uma pessoa. E você é o meu lar, onde quer que estejamos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POET -->
+  <section class="poet-section">
+    <div class="poet-inner reveal">
+      <p class="section-label" style="justify-content:center;">Palavra de quem sabe amar</p>
+      <div class="big-quote">
+        "Não te amo como se fosses uma rosa de sal, topázio ou flecha de cravos que propagam o fogo:
+        te amo como se ama certas coisas obscuras, secretamente, entre a sombra e a alma."
+      </div>
+      <p class="big-quote-cite">— Pablo Neruda, Soneto XVII</p>
+
+      <div
+        style="margin-top:5rem; padding:3rem; background:var(--cream); border-radius:12px; border:1px solid rgba(155,28,46,0.12);">
+        <p class="section-label" style="justify-content:center;color:var(--navy-md);">Clarice Lispector</p>
+        <div class="big-quote" style="font-size:1.6rem; color:var(--navy-md);">
+          "Ela era o tipo de mulher que sabia que o universo era grande demais para caber em palavras —
+          mas tentava assim mesmo, porque era isso que ela era: tentativa e esperança."
+        </div>
+        <p class="big-quote-cite" style="color:var(--navy-lt);">— Inspirado em Clarice Lispector, Água Viva</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Roberta</div>
+    <span class="footer-heart">♥</span>
+    <p class="footer-quote">
+      "Amar é dar a alguém o poder de destruir você — e confiar que não o fará."<br>
+      <em style="font-family:'Cormorant Garamond',serif; font-size:0.85rem; letter-spacing:0.15em;">— Autor
+        desconhecido</em>
+    </p>
+    <p class="footer-text">© 2026 — Reservado eternamente a Roberta Maria Martins Lansana</p>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px'; });
+    function animateCursor() { ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12; cursorRing.style.left = ringX + 'px'; cursorRing.style.top = ringY + 'px'; requestAnimationFrame(animateCursor); }
+    animateCursor();
+
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    const hearts = ['❤', '♥', '✦', '·'];
+    const particles = [];
+    class Particle { constructor() { this.reset(); } reset() { this.x = Math.random() * canvas.width; this.y = canvas.height + 20; this.size = Math.random() * 12 + 5; this.speed = Math.random() * 0.7 + 0.3; this.drift = (Math.random() - 0.5) * 0.4; this.opacity = Math.random() * 0.4 + 0.1; this.symbol = hearts[Math.floor(Math.random() * hearts.length)]; this.color = Math.random() > 0.5 ? `rgba(155,28,46,${this.opacity})` : `rgba(201,168,76,${this.opacity})`; } update() { this.y -= this.speed; this.x += this.drift; if (this.y < -20) this.reset(); } draw() { ctx.save(); ctx.translate(this.x, this.y); ctx.font = `${this.size}px serif`; ctx.fillStyle = this.color; ctx.fillText(this.symbol, 0, 0); ctx.restore(); } }
+    const isMobile = window.innerWidth <= 768;
+    const particleCount = isMobile ? 15 : 50;
+    for (let i = 0; i < particleCount; i++) { const p = new Particle(); p.y = Math.random() * canvas.height; particles.push(p); }
+    function animateParticles() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animateParticles); }
+    animateParticles();
+
+    /* Mobile Menu */
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('open');
+      document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => { if (window.scrollY > 60) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+    const reveals = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+    const observer = new IntersectionObserver(entries => { entries.forEach((entry, i) => { if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 100); }); }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>

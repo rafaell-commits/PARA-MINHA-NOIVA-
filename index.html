@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roberta — Um Site de Amor</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Floating Particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- HEADER -->
+  <header id="header">
+    <a class="logo" href="index.html">R<span>oberta</span></a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="nos.html">Nós</a></li>
+        <li><span class="nav-heart">♥</span></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">❦ &nbsp; Um site feito com amor &nbsp; ❦</p>
+      <h1>
+        Roberta
+        <em>Maria</em>
+      </h1>
+      <p class="hero-quote">
+        "Quero fazer contigo o que a primavera faz com as cerejeiras."
+      </p>
+      <p class="hero-quote-author">— Pablo Neruda</p>
+      <a href="#sobre" class="hero-cta">
+        <span>Descobrir</span>
+        <span>↓</span>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <span>Role</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- QUOTE BAND -->
+  <div class="quote-band">
+    <blockquote>
+      "Ela era o tipo de garota que florescia com olhares e murchava com indiferença — mas comigo, ela sempre
+      floresceu."
+    </blockquote>
+    <cite>— Inspirado em F. Scott Fitzgerald, O Grande Gatsby</cite>
+  </div>
+
+  <!-- SOBRE -->
+  <section class="sobre-section" id="sobre">
+    <div class="sobre-grid">
+
+      <div class="sobre-img-wrap reveal-left">
+        <div class="sobre-img-frame">
+          <img src="foto.jpeg" alt="Roberta — minha predileta">
+          <span class="sobre-img-caption">♥ A pessoa mais especial do universo</span>
+        </div>
+      </div>
+
+      <div class="sobre-text reveal-right">
+        <p class="section-label">Sobre este site</p>
+        <h2>Criado com cada coisa que <em>aprendi</em> — para você</h2>
+        <p>
+          Este projeto carrega todo o meu aprendizado e, mais do que isso, cada linha de código foi escrita
+          com você em mente. Cada cor escolhida, cada palavra selecionada — tudo pensado para te fazer sorrir.
+        </p>
+        <p>
+          Você merece o melhor de mim em todos os sentidos. E se hoje o que tenho a oferecer é código,
+          então que seja o mais bonito código do mundo.
+        </p>
+
+        <div class="inline-quote">
+          <p>"Amar é encontrar na felicidade de outro a própria felicidade."</p>
+          <small>— Gottfried Wilhelm Leibniz</small>
+        </div>
+
+        <p>
+          Neste espaço você encontra citações dos poetas que mais me emocionam, filmes que me marcaram,
+          e palavras que sinto, mas às vezes não sei pronunciar.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUOTES GRID -->
+  <section class="quotes-section" id="citacoes">
+    <div class="section-header reveal">
+      <p class="section-label">Palavras que te descrevem</p>
+      <h2>O que grandes escritores<br><span>nunca souberam</span> que eram para você</h2>
+    </div>
+
+    <div class="quotes-grid">
+
+      <div class="quote-card featured reveal">
+        <p class="source-tag">Pablo Neruda · Poema 20</p>
+        <blockquote>
+          "Posso escrever os versos mais tristes esta noite. Eu a amei, e às vezes ela também me amava.
+          Em noites como esta, a tive entre meus braços. A beijei tantas vezes sob o céu infinito."
+        </blockquote>
+        <cite>— Pablo Neruda, 20 Poemas de Amor</cite>
+      </div>
+
+      <div class="quote-card reveal">
+        <p class="source-tag">Fernando Pessoa</p>
+        <blockquote>
+          "Não sou nada. Nunca serei nada. Não posso querer ser nada. À parte isso, tenho em mim todos os sonhos do
+          mundo."
+        </blockquote>
+        <cite>— Fernando Pessoa, Tabacaria</cite>
+      </div>
+
+      <div class="quote-card reveal">
+        <p class="source-tag">Clarice Lispector</p>
+        <blockquote>
+          "Ela era suave e forte ao mesmo tempo, como aquelas flores que crescem entre pedras e resistem ao vento."
+        </blockquote>
+        <cite>— Clarice Lispector, A Maçã no Escuro</cite>
+      </div>
+
+      <div class="quote-card reveal">
+        <p class="source-tag">Pablo Neruda · Odes</p>
+        <blockquote>
+          "Você é como o dia de janeiro, que entra pela janela, cobre o mundo de luz e aquece até o que parecia frio
+          para sempre."
+        </blockquote>
+        <cite>— Pablo Neruda, Odes Elementales</cite>
+      </div>
+
+      <div class="quote-card featured reveal">
+        <p class="source-tag">Vinícius de Moraes</p>
+        <blockquote>
+          "Que seja eterno enquanto dure. É bonito que seja assim. Que ela me dê alegria. Quero é que ela exista dentro
+          de mim."
+        </blockquote>
+        <cite>— Vinícius de Moraes, Para Viver um Grande Amor</cite>
+      </div>
+
+      <div class="quote-card reveal">
+        <p class="source-tag">Drummond de Andrade</p>
+        <blockquote>
+          "No meio do caminho tinha uma pedra — mas no fim do caminho, havia você. E isso muda tudo."
+        </blockquote>
+        <cite>— Inspirado em Carlos Drummond de Andrade</cite>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NÓS -->
+  <section class="nos-section" id="nos">
+    <div class="nos-inner">
+
+      <div class="nos-top">
+        <div class="nos-text reveal-left">
+          <p class="section-label">A melhor parte de mim</p>
+          <h2>A melhor versão<br>de qualquer história<br>começa com <em>você</em></h2>
+          <p>
+            Nossa relação não é perfeita — e nem precisa ser. É real, é quente, é nossa.
+            Cada momento ao seu lado vale mais do que qualquer verso que eu possa escrever.
+          </p>
+          <p>
+            Mas como gosto de escrever, decidi criar este lugar: um canto digital só para você,
+            para que você saiba — onde quer que eu esteja — o quanto você importa.
+          </p>
+        </div>
+
+        <div class="nos-pillars reveal-right">
+          <div class="pillar">
+            <div class="pillar-icon">🌹</div>
+            <div class="pillar-info">
+              <h3>Nossa Relação</h3>
+              <p>Cada detalhe, cada risada, cada silêncio compartilhado. É tudo nosso.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌊</div>
+            <div class="pillar-info">
+              <h3>Nossos Momentos</h3>
+              <p>Guardados na memória melhor do que em qualquer foto — sentidos, não apenas vistos.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">✨</div>
+            <div class="pillar-info">
+              <h3>Nosso Futuro</h3>
+              <p>Ainda não escrito. E isso é o que mais me emociona: construiremos juntos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Film Quotes -->
+      <div class="film-strip reveal">
+        <p class="film-strip-label">♦ &nbsp; Do cinema para nós &nbsp; ♦</p>
+        <div class="film-quotes-list">
+          <div class="film-quote-item">
+            <blockquote>"Você é a primeira coisa que penso de manhã e a última à noite. E entre uma e outra, você ocupa
+              cada pensamento."</blockquote>
+            <cite>— O Diário de uma Paixão (2004)</cite>
+          </div>
+          <div class="film-quote-item">
+            <blockquote>"Quando você percebe que quer passar o resto da sua vida com alguém, quer que o resto da sua
+              vida comece o mais rápido possível."</blockquote>
+            <cite>— Sintonia de Amor (1989)</cite>
+          </div>
+          <div class="film-quote-item">
+            <blockquote>"Você me completa."</blockquote>
+            <cite>— Jerry Maguire (1996)</cite>
+          </div>
+          <div class="film-quote-item">
+            <blockquote>"É você. Sempre foi você."</blockquote>
+            <cite>— Do Jeito que Você É (2012)</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Love Letter -->
+      <div class="love-letter reveal">
+        <p class="section-label">Uma carta</p>
+        <h2>"Para você, que lê isto agora"</h2>
+        <p>
+          Roberta, você é a razão pela qual quero ser melhor — em tudo.
+          Em código, em palavras, em amor. Cada coisa que aprendo, aprendo pensando em você.
+          Cada conquista, divido com você primeiro.
+        </p>
+        <p>
+          Este site é pequeno perto do que você merece. Mas é feito com o coração inteiro.
+        </p>
+        <p class="signature">Com todo o amor que tenho, ❤</p>
+      </div>
+
+      <!-- Surprise Button -->
+      <div class="surprise-wrap reveal">
+        <p
+          style="font-family:'Cormorant Garamond',serif; font-size:0.85rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--crimson); margin-bottom:1.5rem;">
+          ♦ &nbsp; Um último segredo &nbsp; ♦
+        </p>
+        <button class="btn-surpresa" id="btnSurpresa">
+          <span>❤ &nbsp; Clique aqui, meu amor &nbsp; ❤</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Roberta</div>
+    <span class="footer-heart">♥</span>
+    <p class="footer-quote">
+      "O amor não é apenas um sentimento — é uma escolha feita todos os dias."
+      <br><em style="font-family:'Cormorant Garamond',serif; font-size:0.85rem; letter-spacing:0.15em;">— Paulo
+        Coelho</em>
+    </p>
+    <p class="footer-text">© 2026 — Reservado eternamente a Roberta Maria Martins Lansana</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <span class="modal-icon">❤️</span>
+      <h2 class="modal-title">Você é a pessoa mais especial do universo!</h2>
+      <p class="modal-text">
+        Não existe palavra em português, inglês ou qualquer outra língua que descreva perfeitamente
+        o que você representa. Mas se eu tivesse que escolher uma:
+      </p>
+      <p class="modal-text"
+        style="font-weight:600; color:var(--gold-lt); font-size:1.4rem; font-family:'Playfair Display',serif; font-style:italic;">
+        "Tudo."
+      </p>
+      <div class="modal-quote">
+        "Você é o lar que não sabia que precisava encontrar,
+        e agora que encontrei, não imagino voltar."<br>
+        <small
+          style="font-family:'Cormorant Garamond',serif; font-size:0.8rem; letter-spacing:0.15em; color:var(--gold); display:block; margin-top:0.5rem;">—
+          Com todo amor do seu noivo ❤</small>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ═══════════════════════════════════════════
+       CUSTOM CURSOR
+    ═══════════════════════════════════════════ */
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+    });
+
+    function animateCursor() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * .12;
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top = ringY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    document.querySelectorAll('a, button, .pillar, .quote-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '20px'; cursor.style.height = '20px';
+        cursorRing.style.width = '56px'; cursorRing.style.height = '56px';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '12px'; cursor.style.height = '12px';
+        cursorRing.style.width = '36px'; cursorRing.style.height = '36px';
+      });
+    });
+
+    /* ═══════════════════════════════════════════
+       PARTICLES
+    ═══════════════════════════════════════════ */
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    const hearts = ['❤', '♥', '✦', '·', '˙'];
+    const particles = [];
+
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + 20;
+        this.size = Math.random() * 14 + 6;
+        this.speed = Math.random() * 0.8 + 0.3;
+        this.drift = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5 + 0.1;
+        this.symbol = hearts[Math.floor(Math.random() * hearts.length)];
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.02;
+        this.color = Math.random() > 0.5
+          ? `rgba(155,28,46,${this.opacity})`
+          : `rgba(201,168,76,${this.opacity})`;
+      }
+      update() {
+        this.y -= this.speed;
+        this.x += this.drift;
+        this.rotation += this.rotSpeed;
+        if (this.y < -20) this.reset();
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.font = `${this.size}px serif`;
+        ctx.fillStyle = this.color;
+        ctx.fillText(this.symbol, 0, 0);
+        ctx.restore();
+      }
+    }
+
+    const isMobile = window.innerWidth <= 768;
+    const particleCount = isMobile ? 20 : 60;
+    for (let i = 0; i < particleCount; i++) {
+      const p = new Particle();
+      p.y = Math.random() * canvas.height;
+      particles.push(p);
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    /* ═══════════════════════════════════════════
+       MOBILE MENU
+    ═══════════════════════════════════════════ */
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('open');
+      document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close menu when clicking a link
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* ═══════════════════════════════════════════
+       SCROLL EFFECTS
+    ═══════════════════════════════════════════ */
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 120);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    /* ═══════════════════════════════════════════
+       SMOOTH SCROLL
+    ═══════════════════════════════════════════ */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    /* ═══════════════════════════════════════════
+       MODAL
+    ═══════════════════════════════════════════ */
+    const modal = document.getElementById('modalOverlay');
+    const btnSurpresa = document.getElementById('btnSurpresa');
+    const modalClose = document.getElementById('modalClose');
+
+    btnSurpresa.addEventListener('click', () => modal.classList.add('active'));
+    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
+
+    /* ═══════════════════════════════════════════
+       PARALLAX HERO (disabled on touch devices)
+    ═══════════════════════════════════════════ */
+    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    if (!isTouch) {
+      window.addEventListener('scroll', () => {
+        const hero = document.querySelector('.hero-inner');
+        if (hero) {
+          hero.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>

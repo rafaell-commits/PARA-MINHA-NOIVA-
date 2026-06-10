@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nós — Roberta</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-hero {
+      min-height: 60vh;
+      background: linear-gradient(135deg, rgba(107, 15, 31, 0.97) 0%, rgba(13, 27, 62, 0.95) 55%, rgba(107, 15, 31, 0.97) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 6% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201, 168, 76, 0.08), transparent 65%);
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-hero-inner .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .page-hero-inner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-hero-inner h1 span {
+      color: var(--gold-lt);
+      display: block;
+    }
+
+    .page-hero-inner p {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: rgba(253, 250, 245, 0.7);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Manifesto */
+    .manifesto-section {
+      padding: 8rem 6%;
+      background: var(--white);
+    }
+
+    .manifesto-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .manifesto-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .manifesto-inner p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Pillars full width */
+    .pillars-section {
+      padding: 8rem 6%;
+      background: var(--cream);
+    }
+
+    .pillars-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .pillar-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      border: 1px solid rgba(155, 28, 46, 0.1);
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(155, 28, 46, 0.06), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(155, 28, 46, 0.12);
+      border-color: var(--crimson);
+    }
+
+    .pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .pillar-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(155, 28, 46, 0.08);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .pillar-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+    }
+
+    .pillar-card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    .pillar-card .card-quote {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--crimson);
+      margin-top: 1.2rem;
+      border-top: 1px solid rgba(155, 28, 46, 0.12);
+      padding-top: 1rem;
+    }
+
+    /* Grand Promise */
+    .promise-section {
+      padding: 8rem 6%;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promise-section::before {
+      content: 'NÓS';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 20rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.02);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .promise-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .promise-list {
+      list-style: none;
+      margin-top: 4rem;
+    }
+
+    .promise-list li {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+      padding: 2rem 0;
+      transition: padding-left 0.3s;
+    }
+
+    .promise-list li:hover {
+      padding-left: 0.8rem;
+    }
+
+    .promise-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(201, 168, 76, 0.2);
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: -0.3rem;
+    }
+
+    .promise-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .promise-text p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(253, 250, 245, 0.6);
+    }
+
+    /* Final declaration */
+    .declaration {
+      padding: 9rem 6%;
+      background: linear-gradient(135deg, var(--crimson-dk), #6B0F1F 50%, #3D0A15);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .declaration::before {
+      content: '♥';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30rem;
+      color: rgba(255, 255, 255, 0.025);
+      line-height: 1;
+    }
+
+    .declaration-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .declaration h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+
+    .declaration p {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.3rem;
+      line-height: 1.85;
+      color: rgba(253, 250, 245, 0.85);
+      margin-bottom: 1.5rem;
+    }
+
+    .declaration .big-signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-style: italic;
+      color: var(--gold-lt);
+      margin-top: 2rem;
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(253, 250, 245, 0.3);
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.4s;
+      margin-top: 3rem;
+      display: inline-block;
+    }
+
+    .nav-back:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    @media(max-width:900px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:768px) {
+      .page-hero {
+        min-height: 50vh;
+        padding: 6rem 5% 3rem;
+      }
+
+      .page-hero-inner h1 {
+        font-size: clamp(2.2rem, 10vw, 4rem);
+      }
+
+      .page-hero-inner p {
+        font-size: 1.05rem;
+      }
+
+      .manifesto-section {
+        padding: 5rem 5%;
+      }
+
+      .manifesto-inner h2 {
+        font-size: clamp(1.6rem, 5vw, 2.5rem);
+      }
+
+      .manifesto-inner p {
+        font-size: 1.05rem;
+      }
+
+      .pillars-section {
+        padding: 5rem 5%;
+      }
+
+      .pillars-grid {
+        margin-top: 2.5rem;
+        gap: 1.5rem;
+      }
+
+      .pillar-card {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .pillar-card .num {
+        font-size: 3rem;
+      }
+
+      .pillar-card .emoji {
+        font-size: 2rem;
+      }
+
+      .pillar-card h3 {
+        font-size: 1.15rem;
+      }
+
+      .pillar-card p {
+        font-size: 0.95rem;
+      }
+
+      .promise-section {
+        padding: 5rem 5%;
+      }
+
+      .promise-list {
+        margin-top: 2.5rem;
+      }
+
+      .promise-list li {
+        gap: 1.2rem;
+        padding: 1.5rem 0;
+      }
+
+      .promise-num {
+        font-size: 2rem;
+      }
+
+      .promise-text h3 {
+        font-size: 1.15rem;
+      }
+
+      .promise-text p {
+        font-size: 0.95rem;
+      }
+
+      .declaration {
+        padding: 5rem 5%;
+      }
+
+      .declaration h2 {
+        font-size: clamp(1.6rem, 5vw, 2.8rem);
+      }
+
+      .declaration p {
+        font-size: 1.1rem;
+      }
+
+      .declaration .big-signature {
+        font-size: 1.8rem;
+      }
+
+      .nav-back {
+        font-size: 0.85rem;
+        padding: 0.8rem 2rem;
+        margin-top: 2rem;
+      }
+    }
+
+    @media(max-width:420px) {
+      .page-hero-inner h1 {
+        font-size: clamp(2rem, 11vw, 3rem);
+      }
+
+      .manifesto-inner h2 {
+        font-size: 1.4rem;
+      }
+
+      .declaration h2 {
+        font-size: 1.4rem;
+      }
+
+      .declaration .big-signature {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <header id="header">
+    <a class="logo" href="index.html">R<span>oberta</span></a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="nos.html" class="active">Nós</a></li>
+        <li><span class="nav-heart">♥</span></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="hero-eyebrow">❦ &nbsp; Capítulo III &nbsp; ❦</span>
+      <h1>
+        A melhor
+        <span>parte de mim</span>
+      </h1>
+      <p>"Dois são um — quando se amam de verdade."</p>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto-section">
+    <div class="manifesto-inner reveal">
+      <p class="section-label" style="justify-content:center;">O que somos</p>
+      <h2>Não somos perfeitos.<br>Somos reais — e isso é<br>infinitamente melhor.</h2>
+      <p>
+        Nós não vivemos num conto de fadas. Vivemos numa história real, com dias bons e dias difíceis,
+        com risadas e com silêncios, com certezas e com medos. E é exatamente por isso que o que
+        temos vale ouro — porque é verdadeiro.
+      </p>
+      <p>
+        Cada momento ao seu lado carrega um peso que não cabe em palavras. Mas como gosto de tentar
+        traduzir o que sinto, escolhi as palavras de quem melhor soube falar de amor:
+      </p>
+      <div class="inline-quote">
+        <p>"O amor não é olhar um para o outro; é olhar juntos na mesma direção."</p>
+        <small>— Antoine de Saint-Exupéry, Terra dos Homens</small>
+      </div>
+      <div class="inline-quote" style="margin-top:1.2rem;">
+        <p>"Cada segundo que passa ao lado de quem amamos é um segundo que se recusa a morrer."</p>
+        <small>— Gabriel García Márquez, O Amor nos Tempos do Cólera</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars-section">
+    <div class="pillars-inner">
+      <div class="section-header reveal">
+        <p class="section-label">Os três pilares de nós</p>
+        <h2
+          style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;font-style:italic;color:var(--navy);margin-top:0.5rem;">
+          Nossa relação, nossos momentos,<br>nosso <span style="color:var(--crimson);">futuro</span>
+        </h2>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <div class="num">I</div>
+          <span class="emoji">🌹</span>
+          <h3>Nossa Relação</h3>
+          <p>
+            O que temos foi construído com paciência, respeito e muito amor. Não é algo que simplesmente
+            aconteceu — é algo que escolhemos, todos os dias.
+          </p>
+          <p class="card-quote">"Amar alguém é dizer: você não vai morrer." — Gabriel Marcel</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="num">II</div>
+          <span class="emoji">🌊</span>
+          <h3>Nossos Momentos</h3>
+          <p>
+            Cada conversa, cada olhar, cada riso compartilhado — são esses os momentos que fazem
+            a vida valer a pena. Guardo cada um deles com carinho.
+          </p>
+          <p class="card-quote">"Os momentos mais belos não se fotografam — se sentem." — Autor desconhecido</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="num">III</div>
+          <span class="emoji">✨</span>
+          <h3>Nosso Futuro</h3>
+          <p>
+            Ainda em construção. E essa é a parte mais bonita: não sei exatamente como será,
+            mas sei que você estará lá — e isso é suficiente.
+          </p>
+          <p class="card-quote">"O futuro pertence àqueles que acreditam na beleza dos seus sonhos." — Eleanor Roosevelt
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRAND PROMISE -->
+  <section class="promise-section">
+    <div class="promise-inner">
+      <div class="section-header reveal">
+        <p class="section-label" style="justify-content:center;color:var(--gold);">
+          <span style="background:var(--gold);display:inline-block;width:30px;height:1px;"></span>
+          Meus votos a você
+        </p>
+        <h2
+          style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;font-style:italic;color:var(--white);margin-top:0.5rem;">
+          Promessas que nenhum <span style="color:var(--gold-lt);">anel</span> caberia sozinho
+        </h2>
+      </div>
+      <ul class="promise-list">
+        <li class="reveal">
+          <span class="promise-num">01</span>
+          <div class="promise-text">
+            <h3>Estar presente</h3>
+            <p>Não apenas fisicamente — mas de coração, de mente, de atenção plena. Inteiro para você.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="promise-num">02</span>
+          <div class="promise-text">
+            <h3>Nunca parar de aprender</h3>
+            <p>Aprender a te amar melhor todos os dias. Porque o amor que se repete igual todos os dias não cresce.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="promise-num">03</span>
+          <div class="promise-text">
+            <h3>Fazer você sorrir</h3>
+            <p>Mesmo que seja com um site feito de código, de poesias roubadas e de coração aberto.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="promise-num">04</span>
+          <div class="promise-text">
+            <h3>Escolher você</h3>
+            <p>"Toda vez que tenho uma escolha, eu te escolho." — esse é o meu maior voto.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="promise-num">05</span>
+          <div class="promise-text">
+            <h3>Construir o nosso futuro</h3>
+            <p>Tijolo por tijolo, dia por dia — com você como minha parceira em tudo que vier.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DECLARATION -->
+  <section class="declaration">
+    <div class="declaration-inner reveal">
+      <p class="section-label" style="justify-content:center;color:rgba(253,250,245,0.5);">
+        <span style="background:rgba(253,250,245,0.3);display:inline-block;width:30px;height:1px;"></span>
+        Para sempre
+      </p>
+      <h2>"Você é a resposta que eu não sabia que estava procurando."</h2>
+      <p>
+        Roberta, este site é pequeno demais perto do que você é para mim.
+        Mas enquanto eu estiver aprendendo, enquanto eu estiver crescendo —
+        cada coisa que eu criar será para você. Porque você é minha razão.
+      </p>
+      <p>
+        Te amo hoje, amanhã, e em todos os dias que eu não consigo ainda imaginar.
+      </p>
+      <div class="big-signature">Com todo o amor do mundo ❤</div>
+      <a href="index.html" class="nav-back">← Voltar ao início</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Roberta</div>
+    <span class="footer-heart">♥</span>
+    <p class="footer-quote">
+      "Amo-te tanto que nem sei como se faz para não te amar."<br>
+      <em style="font-family:'Cormorant Garamond',serif; font-size:0.85rem; letter-spacing:0.15em;">— Vinícius de
+        Moraes</em>
+    </p>
+    <p class="footer-text">© 2026 — Reservado eternamente a Roberta Maria Martins Lansana</p>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor'), cursorRing = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px'; });
+    function animateCursor() { ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12; cursorRing.style.left = ringX + 'px'; cursorRing.style.top = ringY + 'px'; requestAnimationFrame(animateCursor); }
+    animateCursor();
+
+    const canvas = document.getElementById('particles-canvas'), ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    const hearts = ['❤', '♥', '✦', '·']; const particles = [];
+    class Particle { constructor() { this.reset(); } reset() { this.x = Math.random() * canvas.width; this.y = canvas.height + 20; this.size = Math.random() * 12 + 5; this.speed = Math.random() * 0.7 + 0.3; this.drift = (Math.random() - 0.5) * 0.4; this.opacity = Math.random() * 0.4 + 0.1; this.symbol = hearts[Math.floor(Math.random() * hearts.length)]; this.color = Math.random() > 0.5 ? `rgba(155,28,46,${this.opacity})` : `rgba(201,168,76,${this.opacity})`; } update() { this.y -= this.speed; this.x += this.drift; if (this.y < -20) this.reset(); } draw() { ctx.save(); ctx.translate(this.x, this.y); ctx.font = `${this.size}px serif`; ctx.fillStyle = this.color; ctx.fillText(this.symbol, 0, 0); ctx.restore(); } }
+    const isMobile = window.innerWidth <= 768;
+    const particleCount = isMobile ? 15 : 50;
+    for (let i = 0; i < particleCount; i++) { const p = new Particle(); p.y = Math.random() * canvas.height; particles.push(p); }
+    function animateParticles() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animateParticles); }
+    animateParticles();
+
+    /* Mobile Menu */
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('open');
+      document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => { if (window.scrollY > 60) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+    const reveals = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+    const observer = new IntersectionObserver(entries => { entries.forEach((entry, i) => { if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 100); }); }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
